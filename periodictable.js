@@ -82,6 +82,12 @@
 		this._FireFilterChangedEvent(changed);
 	}
 
+
+	GetElement(atomicnumber)
+	{
+		return this._data[atomicnumber - 1];
+	}
+
 	//-----------------------------------------------------------------
     // FUNCTIONS
     //-------------------------------------------------------------------

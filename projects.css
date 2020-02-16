@@ -151,6 +151,9 @@ td
 {
     border-width: 0px;
     padding:0px;
+    font-family: sans-serif;
+    font-size: small;
+    margin:4px;
 }
 
 tr
@@ -162,14 +165,25 @@ tr
 th
 {
     border-width: 0px;
-    padding:0px;
     padding: 4px;
     font-family: sans-serif;
     font-size: small;
     overflow: hidden;
-    color: #404040;
     margin:4px;
     font-weight: bold;
+    text-align: left;
+}
+
+.thelementname
+{
+    border-width: 0px;
+    padding: 4px;
+    font-family: sans-serif;
+    font-size: large;
+    overflow: hidden;
+    margin:4px;
+    font-weight: bold;
+    text-align: center;
 }
 
 hr
@@ -231,6 +245,7 @@ input[type=radio]
     overflow: hidden;
     border:2px solid #404040;
     border-radius: 4px 4px 4px 4px;
+    cursor: pointer;
 }
 
 .elementcellfaded
@@ -257,7 +272,6 @@ input[type=radio]
 
 .headingcell
 {
-    /*background-color: #C0C0C0;*/
     text-align: center;
     color: #FFFFFF;
 }

@@ -6,7 +6,7 @@ window.onload = function()
 
     APP.periodictable = new PeriodicTable();
 
-    APP.display = new PeriodicTableDisplay(APP.periodictable, "periodictable");
+    APP.display = new PeriodicTableDisplay(APP.periodictable, "periodictable", "infoboxbackground", "infobox");
 
     APP.filterinputs =
 	{

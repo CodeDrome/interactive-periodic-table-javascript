@@ -158,8 +158,36 @@
 
 	</div>
 
+
+	<div id="infoboxbackground"
+	style="background-color: #000000; position: absolute;
+	left: 0px; right: 0px; top: 0px; bottom: 0px;
+    opacity: 0.9; visibility: hidden;"></div>
+
+	<div id="infobox"
+	 class="border roundcorners"
+	style="position:absolute;  width: 500px; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #FFFFFF; visibility: hidden;">
+
+		<table style="width:100%;">
+    		<tr><th colspan="2" id="infoName" class="thelementname"></th></tr>
+    		<tr><th>Atomic number</th><td id="infoAtomicNumber"></th></tr>
+        	<tr><th>Chemical Symbol</th><td id="infoChemicalSymbol"></td></tr>
+        	<tr><th>Category</th><td id="infoCategory"></td></tr>
+        	<tr><th>Atomic weight - conventional</th><td id="infoAtomicWeightConventional"></td></tr>
+        	<tr><th>Atomic weight - standard</th><td id="infoAtomicWeightStandard"></td></tr>
+        	<tr><th>Occurrence</th><td id="infoOccurrence"></td></tr>
+        	<tr><th>State of matter</th><td id="infoStateOfMatter"></td></tr>
+        	<tr><th>Group</th><td id="infoGroup"></td></tr>
+        	<tr><th>Period</th><td id="infoPeriod"></td></tr>
+        	<tr><th>Block</th><td id="infoBlock"></td></tr>
+        	<tr><td colspan="2"><div id="btnCloseInfoBox" class="button">Close</div></td></tr>
+		</table>
+
+	</div>
+
     <script src="data.js"></script>
     <script src="periodictable.js"></script>
+    <script src="periodictableinfobox.js"></script>
     <script src="periodictabledisplay.js"></script>
     <script src="periodictablepage.js"></script>
 

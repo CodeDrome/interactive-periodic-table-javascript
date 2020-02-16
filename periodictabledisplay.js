@@ -1,11 +1,13 @@
 ﻿class PeriodicTableDisplay
 {
-	constructor(periodictable, tableid)
+	constructor(periodictable, tableid, infoboxbackgroundid, infoboxid)
 	{
 		this._periodictable = periodictable;
         this._tableid = tableid;
 
 		this._periodictable.AddFilterChangedEventHandler(this._onFilterChanged);
+
+		this._infobox = new PeriodicTableInfoBox(periodictable, infoboxbackgroundid, infoboxid);
 
 		this._categoryClassMappings =
 		{
@@ -40,12 +42,24 @@
 		};
 
 		this._createCells();
-
 		this._createColumnHeadings();
-
 		this._createRowHeadings();
-
 		this._populate();
+
+		document.getElementById(this._tableid).addEventListener('click', event =>
+		{
+			let target = event.target;
+
+			if(target.parentElement.classList.contains("elementcell"))
+			{
+				target = event.target.parentElement;
+			}
+
+			if(target.classList.contains("elementcell"))
+			{
+				this._infobox.Show(target.dataset.atomicnumber);
+			}
+		});
     }
 
 
@@ -55,7 +69,7 @@
 
 		for(let element of changed)
 		{
-			currentcell = document.querySelector(`[data-row='${element.row}'][data-column='${element.column}']`);
+			currentcell = document.querySelector(`[data-row='${element.tablerow18col}'][data-column='${element.tablecolumn18col}']`);
 
 			currentcell.classList.toggle("elementcellfaded");
 		}
@@ -113,15 +127,34 @@
 
     _populate()
     {
-        for(let element of this._periodictable.data)
+		let currentcell = null;
+		let tooltip = "";
+
+		for(let element of this._periodictable.data)
 		{
-			let currentcell = document.querySelector(`[data-row='${element.row}'][data-column='${element.column}']`);
+			currentcell = document.querySelector(`[data-row='${element.tablerow18col}'][data-column='${element.tablecolumn18col}']`);
+
+			currentcell.setAttribute('data-atomicnumber', element.atomicnumber);
 
 			currentcell.innerHTML = `
 				${element.name}<br />
 				${element.atomicnumber}<br />
 				<span class="chemicalsymbol">${element.symbol}</span><br />
 				${element.atomicweight}`;
+
+			tooltip = `Name: ${element.name}
+					Atomic number: ${element.atomicnumber}
+					Chemical symbol: ${element.symbol}
+					Category: ${element.category}
+					Atomic weight - conventional: ${element.atomicweight}
+					Atomic weight - standard: ${element.atomicweightfull}
+					Occurrence: ${element.occurrence}
+					State of matter: ${element.stateofmatter}
+					Group: ${element.group}
+					Period: ${element.period}
+					Block: ${element.block}`;
+
+			currentcell.setAttribute("title", tooltip.replace(/\t/g, ''));
 
 			currentcell.classList.add("elementcell");
 		}
@@ -134,7 +167,7 @@
 	{
         for(let element of this._periodictable.data)
 		{
-			let currentcell = document.querySelector(`[data-row='${element.row}'][data-column='${element.column}']`);
+			let currentcell = document.querySelector(`[data-row='${element.tablerow18col}'][data-column='${element.tablecolumn18col}']`);
 
 			for(let v of Object.values(this._blockClassMappings))
 			{
@@ -150,7 +183,7 @@
 	{
         for(let element of this._periodictable.data)
 		{
-			let currentcell = document.querySelector(`[data-row='${element.row}'][data-column='${element.column}']`);
+			let currentcell = document.querySelector(`[data-row='${element.tablerow18col}'][data-column='${element.tablecolumn18col}']`);
 
 			for(let v of Object.values(this._categoryClassMappings))
 			{
