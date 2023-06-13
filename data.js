@@ -907,8 +907,8 @@ const periodictabledata =
         stateofmatter: "Primordial",
         group: 3,
         period: 6,
-        block: "d",
-        tablerow18col: 6,
+        block: "f",
+        tablerow18col: 8,
         tablecolumn18col: 3,
         visible: true
     },
@@ -1131,9 +1131,9 @@ const periodictabledata =
         stateofmatter: "Primordial",
         group: 0,
         period: 6,
-        block: "f",
-        tablerow18col: 8,
-        tablecolumn18col: 17,
+        block: "d",
+        tablerow18col: 6,
+        tablecolumn18col: 3,
         visible: true
     },
     {
@@ -1419,8 +1419,8 @@ const periodictabledata =
         stateofmatter: "From decay",
         group: 3,
         period: 7,
-        block: "d",
-        tablerow18col: 7,
+        block: "f",
+        tablerow18col: 9,
         tablecolumn18col: 3,
         visible: true
     },
@@ -1643,9 +1643,9 @@ const periodictabledata =
         stateofmatter: "Synthetic",
         group: 0,
         period: 7,
-        block: "f",
-        tablerow18col: 9,
-        tablecolumn18col: 17,
+        block: "d",
+        tablerow18col: 7,
+        tablecolumn18col: 3,
         visible: true
     },
     {

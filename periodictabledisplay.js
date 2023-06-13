@@ -159,7 +159,8 @@
 			currentcell.classList.add("elementcell");
 		}
 
-		this.ColorByCategory();
+		// this.ColorByCategory();
+		this.ColorByBlock();
     }
 
 
